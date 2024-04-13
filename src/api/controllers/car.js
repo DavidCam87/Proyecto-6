@@ -49,7 +49,7 @@ const deleteCar = async (req, res, next) => {
 const getCarsById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const carsById = await Car.findById(id);
+    const carsById = await Car.findById(id).populate('driver');
     return res.status(200).json(carsById);
   } catch (error) {
     return res.status(400).json("ha fallado la peticion GetById")

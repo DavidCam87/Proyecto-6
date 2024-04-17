@@ -16,6 +16,7 @@ app.use("/api/v1/cars", carRoutes);
 
 app.use("/ping", (req, res, next) => {
 
+
   return res.status(200).json("pong 🏓");
 });
 app.use("*", (req, res, next) => {
